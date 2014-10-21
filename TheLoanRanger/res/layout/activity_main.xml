@@ -67,14 +67,13 @@
         android:orientation="vertical" >
 
         <RadioButton
-            android:id="@+id/radio_male"
+            android:id="@+id/choose_monthly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/gender"
             android:text="(Option 1)" />
 
         <RadioButton
-            android:id="@+id/radio_female"
+            android:id="@+id/choose_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(Option 2)" />
