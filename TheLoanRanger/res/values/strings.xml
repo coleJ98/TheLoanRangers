@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    
+    <!--***** LABELS *****-->
+    <string name="step1_label">Step 1:</string>
+    <string name="step2_label">Step 2:</string>
+    <string name="amount_label">Amount to Pay</string>
+    <string name="interest_label">Interest</string>
+    <string name="choose_label">Choose</string>
+    <string name="or_label">Or</string>
+    <string name="desired_monthly_label">Desired Monthly Payments:</string>
+    <string name="desired_payoff_label">Desired Payoff Date:</string>
+    <string name="calculate_button_label">Calculate</string>
+    
+    <!--***** END LABLES SECTION *****-->
+    
+    
+    
+    
+    
+    <!--***** HINTS *****-->
+    <string name="amount_hint">e.g 4000</string>
+    <string name="interest_hint">e.g 7.0</string>
+    
+    <!--***** END HINTS SECTION *****-->
+    
+    
+    
     <string name="app_name">The Loan Ranger</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
