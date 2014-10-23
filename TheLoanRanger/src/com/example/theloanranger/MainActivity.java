@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,6 +36,17 @@ public class MainActivity extends ActionBarActivity {
 
 			}
 		});
+        
+        Spinner selectMonth = (Spinner)findViewById(R.id.month_spinner);
+        String[] months = new String[]{"Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+        ArrayAdapter<String> monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, months);
+        selectMonth.setAdapter(monthAdapter);
+        
+        Spinner selectYear = (Spinner)findViewById(R.id.year_spinner);
+        //****TODO:     Fill in the rest of the years later - maybe 30 year max?
+        String[] years = new String[]{"2014", "2015", "2016", "2017", "..."};
+        ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+        selectYear.setAdapter(yearAdapter); 
     }
 
 
