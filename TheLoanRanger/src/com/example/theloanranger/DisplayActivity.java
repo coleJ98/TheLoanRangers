@@ -1,9 +1,11 @@
 package com.example.theloanranger;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class DisplayActivity extends ActionBarActivity {
 
@@ -11,6 +13,23 @@ public class DisplayActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_display);
+		
+		
+		//Receive the intent and fetch the values passed from the other activity
+		Intent intent = getIntent();
+		double amount = intent.getDoubleExtra("AMOUNT", 0.0);
+		double interest = intent.getDoubleExtra("INTEREST", 0.0);
+		
+		
+		//Find the TextViews in the XML where we will display our values
+		TextView amountView = (TextView) findViewById(R.id.amount_display);
+		TextView interestView = (TextView) findViewById(R.id.interest_display);
+		
+		//Set the text of them
+		amountView.setText("" + amount);
+		interestView.setText("" + interest);
+		
+		
 	}
 
 	@Override

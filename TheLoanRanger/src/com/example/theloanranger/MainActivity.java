@@ -1,5 +1,8 @@
 package com.example.theloanranger;
 import android.app.ActionBar;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -28,15 +32,29 @@ public class MainActivity extends ActionBarActivity {
         			
         			@Override
         			public void onClick(View v) {
-        				// TODO Auto-generated method stub
+
         				Intent openPage = new Intent(getBaseContext(), DisplayActivity.class);
+        				
+        				//Find the EditTexts from the XML layout
+        				EditText amount_interest = (EditText) findViewById(R.id.amount_interest);
+        				EditText amount_to_pay = (EditText) findViewById(R.id.amount_to_pay);
+        				
+        				//Fetch the values of them and convert them to doubles
+        				double interest = Double.parseDouble(amount_interest.getText().toString());
+        				double amount = Double.parseDouble(amount_to_pay.getText().toString());
+        				
+        				
+        				
+        				//Add the values to the intent
+        				openPage.putExtra("INTEREST", interest);
+        				openPage.putExtra("AMOUNT", amount);
+        				
+        				
+        				//Start the new activity
         				startActivity(openPage);
-        
         			}
         		});
-             
-         
-        
+     
 
     }
 
