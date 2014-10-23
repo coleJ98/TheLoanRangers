@@ -1,10 +1,13 @@
 package com.example.theloanranger;
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -19,6 +22,18 @@ public class MainActivity extends ActionBarActivity {
 
         
         setContentView(R.layout.activity_main);
+        
+        Button calculate = (Button) findViewById(R.id.calculate);
+        calculate.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent openPage = new Intent(getBaseContext(), DisplayActivity.class);
+				startActivity(openPage);
+
+			}
+		});
     }
 
 

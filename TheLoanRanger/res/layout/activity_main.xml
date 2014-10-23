@@ -30,7 +30,7 @@
 
         <EditText
             android:id="@+id/amount_to_pay"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/amount_hint"
             android:inputType="numberDecimal" />
@@ -85,6 +85,7 @@
     
     
     <Button
+    android:id="@+id/calculate"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
