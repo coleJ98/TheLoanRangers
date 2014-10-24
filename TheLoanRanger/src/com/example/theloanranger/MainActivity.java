@@ -10,8 +10,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.SeekBar;
+import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -54,8 +59,52 @@ public class MainActivity extends ActionBarActivity {
         				startActivity(openPage);
         			}
         		});
-     
+               Spinner selectMonth = (Spinner)findViewById(R.id.month_spinner);
+               String[] months = new String[]{"Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+               ArrayAdapter<String> monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, months);
+               selectMonth.setAdapter(monthAdapter);
+               
+               Spinner selectYear = (Spinner)findViewById(R.id.year_spinner);
+               //****TODO:     Fill in the rest of the years later - maybe 30 year max?
+               String[] years = new String[]{"2014", "2015", "2016", "2017", "..."};
+               ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+               selectYear.setAdapter(yearAdapter); 
 
+    }
+    
+    //Select method used to gray-out radio button options
+    public void select(View v)
+    {
+    	//boolean check = ((RadioButton) v).isChecked();
+    	
+    	//LinearLayout byDateOption = (LinearLayout) findViewById(R.id.spinner_section);
+    	Spinner months = (Spinner)findViewById(R.id.month_spinner);
+    	Spinner years = (Spinner)findViewById(R.id.year_spinner);
+    	SeekBar byPaymentOption = (SeekBar)findViewById(R.id.slider_section);
+
+    	
+    	switch(v.getId())
+    	{
+    		case R.id.choose_monthly:		//Choose Date Option Selected
+    			months.setEnabled(true);
+    			years.setEnabled(true);
+    			byPaymentOption.setEnabled(false);	//gray-out slider
+    			break;
+    			
+    		case R.id.choose_date:		//Choose Date Option Selected
+    			months.setEnabled(false);
+    			years.setEnabled(false);
+    			byPaymentOption.setEnabled(true);	//gray-out slider
+    			break;
+    			
+    		default:					//Choose Month Option Selected
+    			months.setEnabled(true);		//gray-out date-picker
+				years.setEnabled(true);
+    			byPaymentOption.setEnabled(true);
+    			break;
+    			
+    	} 
+    	
     }
 
 

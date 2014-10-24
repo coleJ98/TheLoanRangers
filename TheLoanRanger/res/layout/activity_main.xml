@@ -74,8 +74,11 @@
             android:id="@+id/choose_monthly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By Date" />
+            android:text="By Date" 
+            android:onClick="select" />
+        	
     <LinearLayout
+        	android:id="@+id/spinner_section"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="25dp"
@@ -105,10 +108,11 @@
             android:id="@+id/choose_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By Monthly Payment" />
+            android:text="By Monthly Payment" 
+            android:onClick="select"/>
 
         <SeekBar
-            android:id="@+id/seekBar1"
+            android:id="@+id/slider_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
